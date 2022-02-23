@@ -1,0 +1,51 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* box which contains everything */
+.container {
+    padding: .5em;
+}
+
+/* for input box */
+input {
+    min-width: 400px;
+    font-size: 1.75rem;
+    border: 3px solid #143774;
+    outline: none;
+}
+
+/* styling for group of buttons */
+.actions {
+    padding: 0;
+    padding-top: 1em;
+    display: flex;
+    max-width: 380px;
+    justify-content: space-between;
+}
+
+/* for individual buttons */
+div a {
+    background: #143774;
+    color: #fff;
+    display: inline-block;
+    border: none;
+    padding: .5em 1em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* changes for hover states on the btn */
+div a:hover,
+div a:focus {
+    background: #707070;
+}
+
+/* for saved links */
+#saved-links {
+    color: #143774;
+    font-size: 1.5rem;
+}
+
+
+
