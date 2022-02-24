@@ -1,5 +1,6 @@
 // reinforce ; after every statement
 // save articles for future read
+// how to save links in local storage
 const searchBar = document.getElementById("search-bar");
 const saveInput = document.getElementById("save-input");
 const saveTab = document.getElementById("save-tab");
@@ -33,9 +34,9 @@ function saveLinks() {
 }
 
 saveTab.addEventListener("click", function() {
-    // see how to grab the link from the tab 
-    // it was something related to objects(aka dictionary in python)
-    // try creating func
+    chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
+        console.log(tabs[0]);
+    });
 })
 
 deleteAll.addEventListener("click", function() {
