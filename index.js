@@ -34,9 +34,10 @@ function saveLinks() {
 }
 
 saveTab.addEventListener("click", function() {
-    chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
-        console.log(tabs[0]);
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+        console.log(tabs[0].url);
     });
+    console.log("hey, I have heard about those!")
 })
 
 deleteAll.addEventListener("click", function() {
