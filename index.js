@@ -1,5 +1,3 @@
-// reinforce ; after every statement
-// save articles for future read
 // how to save links in local storage
 const searchBar = document.getElementById("search-bar");
 const saveInput = document.getElementById("save-input");
@@ -29,7 +27,7 @@ function displayLinks() {
     let content = "";
     for(let i = 0; i < links.length; i++) {
         content += `<li>
-                        <a href="https://${links[i]}" target="_blank">${links[i]}</a>
+                        <a href="${links[i]}" target="_blank">${links[i]}</a>
                     </li>`;
     }
     savedLinks.innerHTML = content;
