@@ -12,15 +12,18 @@ let links = [];
 // To save links even when the user presses enter
 searchBar.addEventListener("keyup", function(e) {
     if (e.code === 'Enter') {
-        saveLinks();
+        links.push(searchBar.value);
+        displayLinks();
     }
 })
 
 //to save links when the user clicks on addbtn
-saveInput.addEventListener("click", saveLinks)
-
-function saveLinks() {
+saveInput.addEventListener("click", function() {
     links.push(searchBar.value);
+    displayLinks();
+})
+
+function displayLinks() {
     // clearing the value from the search bar so that user can enter another value
     searchBar.value = "";
     let content = "";
@@ -35,9 +38,9 @@ function saveLinks() {
 
 saveTab.addEventListener("click", function() {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
-        console.log(tabs[0].url);
+        links.push(tabs[0].url);
+        displayLinks();
     });
-    console.log("hey, I have heard about those!")
 })
 
 deleteAll.addEventListener("click", function() {
