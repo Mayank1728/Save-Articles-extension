@@ -23,11 +23,12 @@ saveInput.addEventListener("click", function() {
 
 function displayLinks() {
     // clearing the value from the search bar so that user can enter another value
+    localStorage.setItem("links", JSON.stringify(links))
     searchBar.value = "";
     let content = "";
     for(let i = 0; i < links.length; i++) {
         content += `<li>
-                        <a href="${links[i]}" target="_blank">${links[i]}</a>
+                        <a href= "${JSON.parse(localStorage.getItem("links"))[i]}" target="_blank">${JSON.parse(localStorage.getItem("links"))[i]}</a>
                     </li>`;
     }
     savedLinks.innerHTML = content;
@@ -43,6 +44,7 @@ saveTab.addEventListener("click", function() {
 
 deleteAll.addEventListener("click", function() {
     links = [];
+    localStorage.clear();
     savedLinks.textContent = "";
 })
 
